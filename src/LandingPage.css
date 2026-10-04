@@ -1,0 +1,457 @@
+/* ═══════════════════════════════════════════════════════════════════════════
+   LandingPage.css — Organic Design System (scoped to .landing-organic)
+   
+   Extracted from neuraliftx-final.html reference design.
+   Colors, fonts, animations applied ONLY to the landing page.
+   No other pages are affected.
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* ── Design Tokens ─────────────────────────────────────────────────────── */
+.landing-organic {
+  --color-bg: #f5ead8;
+  --color-surface: #ebddc5;
+  --color-text: #201e1d;
+  --color-accent: #c67139;
+  --color-accent-2: #7a8a5e;
+  --color-divider: color-mix(in srgb, #201e1d 16%, transparent);
+
+  /* Neutral ramp */
+  --color-neutral-100: #f9f4ed;
+  --color-neutral-200: #eee7db;
+  --color-neutral-300: #dcd3c4;
+  --color-neutral-400: #c0b6a5;
+  --color-neutral-500: #a19786;
+  --color-neutral-600: #82796a;
+  --color-neutral-700: #645c50;
+  --color-neutral-800: #474238;
+  --color-neutral-900: #2e2b25;
+
+  /* Accent (terracotta) ramp */
+  --color-accent-100: #fff2eb;
+  --color-accent-200: #ffe1d0;
+  --color-accent-300: #ffc6a5;
+  --color-accent-400: #f6a06b;
+  --color-accent-500: #d67f48;
+  --color-accent-600: #b2622d;
+  --color-accent-700: #8c491a;
+  --color-accent-800: #643312;
+  --color-accent-900: #402310;
+
+  /* Accent-2 (olive) ramp */
+  --color-accent-2-100: #f0fae1;
+  --color-accent-2-200: #e1eecc;
+  --color-accent-2-300: #ccdbb2;
+  --color-accent-2-400: #aebf92;
+  --color-accent-2-500: #8fa073;
+  --color-accent-2-600: #728157;
+  --color-accent-2-700: #56633f;
+  --color-accent-2-800: #3d472b;
+  --color-accent-2-900: #272e1b;
+
+  /* Font families */
+  --font-heading: "Caprasimo", "Georgia", serif;
+  --font-body: "Figtree", "Inter", system-ui, sans-serif;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 2px color-mix(in srgb, #2e2b25 14%, transparent);
+  --shadow-md: 0 3px 10px color-mix(in srgb, #2e2b25 16%, transparent);
+  --shadow-lg: 0 12px 32px color-mix(in srgb, #2e2b25 22%, transparent);
+
+  /* Radius */
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 28px;
+
+  /* Reveal animation config */
+  --reveal-y: 28px;
+}
+
+/* ── Base Overrides (scoped) ───────────────────────────────────────────── */
+.landing-organic {
+  background-color: var(--color-bg) !important;
+  color: var(--color-text);
+  font-family: var(--font-body);
+}
+
+.landing-organic ::selection {
+  background: color-mix(in srgb, var(--color-accent) 30%, transparent) !important;
+}
+
+/* ── Heading Font Override ─────────────────────────────────────────────── */
+.landing-organic .organic-heading {
+  font-family: var(--font-heading);
+  font-weight: 400;
+  line-height: 1.12;
+  letter-spacing: -0.015em;
+}
+
+/* ── Scroll-Reveal Animation ──────────────────────────────────────────── */
+.landing-organic [data-reveal] {
+  opacity: 0;
+  transform: translateY(var(--reveal-y));
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.landing-organic [data-reveal].in {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .landing-organic [data-reveal] {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none;
+  }
+}
+
+/* ── Floating Blob Animation ──────────────────────────────────────────── */
+@keyframes nlx-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-18px); }
+}
+
+.landing-organic .organic-blob {
+  position: absolute;
+  border-radius: 50%;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.landing-organic .organic-blob-1 {
+  animation: nlx-float 9s ease-in-out infinite;
+}
+
+.landing-organic .organic-blob-2 {
+  animation: nlx-float 11s ease-in-out infinite reverse;
+}
+
+.landing-organic .organic-blob-3 {
+  animation: nlx-float 13s ease-in-out infinite;
+}
+
+/* ── Card Hover Lift ──────────────────────────────────────────────────── */
+.landing-organic .organic-card {
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.landing-organic .organic-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-md);
+}
+
+/* ── Nav Scroll Shadow ────────────────────────────────────────────────── */
+.landing-organic .organic-nav {
+  transition: box-shadow 0.3s ease, background 0.3s ease;
+  background: var(--color-bg);
+}
+
+.landing-organic.nlx-scrolled .organic-nav {
+  box-shadow: var(--shadow-sm);
+}
+
+/* ── Button Styles ────────────────────────────────────────────────────── */
+.landing-organic .btn-organic-primary {
+  background-color: var(--color-accent) !important;
+  color: var(--color-bg) !important;
+  border-color: var(--color-accent) !important;
+  box-shadow: none !important;
+}
+
+.landing-organic .btn-organic-primary:hover {
+  background-color: var(--color-accent-600) !important;
+}
+
+.landing-organic .btn-organic-secondary {
+  background-color: transparent !important;
+  border: 1.5px solid var(--color-divider) !important;
+  color: var(--color-text) !important;
+  box-shadow: none !important;
+}
+
+.landing-organic .btn-organic-secondary:hover {
+  background-color: color-mix(in srgb, var(--color-text) 7%, transparent) !important;
+  border-color: color-mix(in srgb, var(--color-text) 35%, transparent) !important;
+}
+
+.landing-organic .btn-organic-ghost {
+  background-color: transparent !important;
+  color: var(--color-accent) !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.landing-organic .btn-organic-ghost:hover {
+  background-color: color-mix(in srgb, var(--color-accent) 10%, transparent) !important;
+}
+
+/* Nexus gradient button → becomes accent-2 solid */
+.landing-organic .btn-organic-accent2 {
+  background-color: var(--color-accent-2) !important;
+  color: #fff !important;
+  border-color: var(--color-accent-2) !important;
+  box-shadow: none !important;
+  background-image: none !important;
+}
+
+.landing-organic .btn-organic-accent2:hover {
+  background-color: var(--color-accent-2-600) !important;
+}
+
+/* ── Tag / Badge ──────────────────────────────────────────────────────── */
+.landing-organic .organic-tag {
+  background: var(--color-accent-100);
+  color: var(--color-accent-800);
+  border: none;
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-weight: 600;
+  box-shadow: none;
+}
+
+/* ── Accent Text Highlights ───────────────────────────────────────────── */
+.landing-organic .organic-accent-text {
+  color: var(--color-accent);
+  background: none;
+  -webkit-background-clip: unset;
+  -webkit-text-fill-color: unset;
+  background-clip: unset;
+}
+
+/* ── Muted Text ───────────────────────────────────────────────────────── */
+.landing-organic .organic-muted {
+  color: color-mix(in srgb, var(--color-text) 55%, transparent);
+}
+
+.landing-organic .organic-muted-light {
+  color: color-mix(in srgb, var(--color-text) 70%, transparent);
+}
+
+/* ── Section Backgrounds ──────────────────────────────────────────────── */
+.landing-organic .organic-section-dark {
+  background-color: var(--color-neutral-900) !important;
+  color: var(--color-neutral-100) !important;
+}
+
+.landing-organic .organic-section-white {
+  background-color: var(--color-neutral-100) !important;
+}
+
+.landing-organic .organic-section-surface {
+  background-color: var(--color-surface) !important;
+}
+
+/* ── Feature Cards ────────────────────────────────────────────────────── */
+.landing-organic .organic-feature-card {
+  background: var(--color-surface);
+  border: none;
+  border-radius: calc(var(--radius-lg) * 1.15);
+  box-shadow: var(--shadow-sm);
+}
+
+.landing-organic .organic-feature-card:hover {
+  background: var(--color-neutral-100);
+  box-shadow: var(--shadow-md);
+  border-color: transparent;
+}
+
+/* Icon containers in feature cards */
+.landing-organic .organic-icon-accent {
+  background: var(--color-accent-100) !important;
+  color: var(--color-accent-700) !important;
+}
+
+.landing-organic .organic-icon-accent2 {
+  background: var(--color-accent-2-100) !important;
+  color: var(--color-accent-2-800) !important;
+}
+
+/* ── Role Section Cards ───────────────────────────────────────────────── */
+.landing-organic .organic-role-card {
+  border-color: var(--color-divider) !important;
+  background: var(--color-neutral-100) !important;
+  border-radius: calc(var(--radius-lg) * 1.15);
+}
+
+.landing-organic .organic-role-card-bg-accent {
+  background: var(--color-accent-100) !important;
+}
+
+.landing-organic .organic-role-card-bg-accent2 {
+  background: var(--color-accent-2-100) !important;
+}
+
+/* ── Footer ───────────────────────────────────────────────────────────── */
+.landing-organic .organic-footer-dark {
+  background-color: var(--color-neutral-900) !important;
+  color: var(--color-neutral-100) !important;
+}
+
+.landing-organic .organic-footer {
+  background-color: var(--color-bg) !important;
+  border-color: var(--color-neutral-200) !important;
+}
+
+.landing-organic .organic-footer a {
+  color: color-mix(in srgb, var(--color-text) 60%, transparent);
+  text-decoration: none;
+}
+
+.landing-organic .organic-footer a:hover {
+  color: var(--color-accent);
+}
+
+/* ── Check/List Items ─────────────────────────────────────────────────── */
+.landing-organic .organic-check-icon {
+  background: var(--color-accent-2-100) !important;
+  color: var(--color-accent-2-700) !important;
+}
+
+/* ── Link Underline on Nav ────────────────────────────────────────────── */
+.landing-organic .organic-nav-link {
+  color: color-mix(in srgb, var(--color-text) 70%, transparent);
+  font-weight: 500;
+}
+
+.landing-organic .organic-nav-link:hover {
+  color: var(--color-accent) !important;
+}
+
+.landing-organic .organic-nav-link span {
+  background-color: var(--color-accent) !important;
+}
+
+/* ── Dashboard Mockup Glow ────────────────────────────────────────────── */
+.landing-organic .organic-glow {
+  background: linear-gradient(
+    to right,
+    var(--color-accent-200),
+    var(--color-accent-2-200)
+  ) !important;
+}
+
+.landing-organic .organic-mockup-shadow {
+  box-shadow: var(--shadow-lg) !important;
+  border-color: color-mix(in srgb, var(--color-accent) 15%, transparent) !important;
+}
+
+/* ── Nexus Dark Section Override ──────────────────────────────────────── */
+.landing-organic .organic-nexus-section {
+  background-color: var(--color-neutral-900) !important;
+}
+
+.landing-organic .organic-nexus-section .organic-glow-blob-1 {
+  background: color-mix(in srgb, var(--color-accent) 12%, transparent) !important;
+}
+
+.landing-organic .organic-nexus-section .organic-glow-blob-2 {
+  background: color-mix(in srgb, var(--color-accent-2) 12%, transparent) !important;
+}
+
+/* Nexus section gradient text → accent color solid */
+.landing-organic .organic-nexus-accent-text {
+  color: var(--color-accent-400) !important;
+  background: none !important;
+  -webkit-background-clip: unset !important;
+  -webkit-text-fill-color: var(--color-accent-400) !important;
+  background-clip: unset !important;
+}
+
+/* Nexus CTA button */
+.landing-organic .organic-nexus-cta {
+  background: var(--color-neutral-100) !important;
+  color: var(--color-text) !important;
+}
+
+.landing-organic .organic-nexus-cta:hover {
+  background: #fff !important;
+}
+
+.landing-organic .organic-nexus-cta .organic-hover-overlay {
+  background: linear-gradient(
+    to right,
+    var(--color-accent-100),
+    var(--color-neutral-100),
+    var(--color-accent-2-100)
+  ) !important;
+}
+
+/* Nexus badge */
+.landing-organic .organic-nexus-badge {
+  background: color-mix(in srgb, var(--color-accent) 10%, transparent) !important;
+  border-color: color-mix(in srgb, var(--color-accent) 20%, transparent) !important;
+  color: var(--color-accent-400) !important;
+}
+
+.landing-organic .organic-nexus-badge .organic-pulse-dot {
+  background-color: var(--color-accent) !important;
+}
+
+/* ── Stats Section (inside Nexus) ─────────────────────────────────────── */
+.landing-organic .organic-stat-label {
+  color: color-mix(in srgb, var(--color-neutral-100) 45%, transparent);
+}
+
+/* ── Footer CTA Section ───────────────────────────────────────────────── */
+.landing-organic .organic-cta-section {
+  background-color: var(--color-accent-2-100) !important;
+  color: var(--color-text) !important;
+  border-radius: calc(var(--radius-lg) * 2);
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+.landing-organic .organic-cta-btn-primary {
+  background: var(--color-accent) !important;
+  color: var(--color-bg) !important;
+}
+
+.landing-organic .organic-cta-btn-primary:hover {
+  background: var(--color-accent-600) !important;
+}
+
+.landing-organic .organic-cta-btn-secondary {
+  border-color: var(--color-accent-2-600) !important;
+  color: var(--color-text) !important;
+  background: transparent !important;
+}
+
+.landing-organic .organic-cta-btn-secondary:hover {
+  border-color: var(--color-accent-2) !important;
+  background: color-mix(in srgb, var(--color-accent-2) 10%, transparent) !important;
+}
+
+/* ── Mobile Menu ──────────────────────────────────────────────────────── */
+.landing-organic .organic-mobile-menu {
+  background: var(--color-neutral-100) !important;
+  border-color: var(--color-neutral-200) !important;
+  box-shadow: var(--shadow-lg);
+}
+
+.landing-organic .organic-mobile-menu a {
+  color: color-mix(in srgb, var(--color-text) 70%, transparent);
+}
+
+.landing-organic .organic-mobile-menu a:hover {
+  color: var(--color-accent);
+}
+
+.landing-organic .organic-mobile-login-btn {
+  background: var(--color-neutral-200) !important;
+  color: var(--color-text) !important;
+}
+
+.landing-organic .organic-mobile-login-btn:hover {
+  background: var(--color-neutral-300) !important;
+}
+
+/* ── Responsive adjustments ───────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .landing-organic .organic-heading {
+    letter-spacing: -0.01em;
+  }
+}

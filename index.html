@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, viewport-fit=cover" />
+  <meta name="theme-color" content="#f5ead8" />
+  <meta name="description"
+    content="NeuraliftX - Learn without Boundaries. Ensuring human intelligence scales alongside artificial intelligence — verified, personalized, and trusted." />
+  <meta name="keywords"
+    content="NeuraliftX, AI education, personalized learning, Intelexta Protocol, adaptive learning" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://neuraliftx.in/" />
+
+  <!-- Open Graph / Social Sharing -->
+  <meta property="og:title" content="NeuraliftX - Learn without Boundaries" />
+  <meta property="og:description"
+    content="AI-powered educational platform ensuring human intelligence scales alongside artificial intelligence." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://neuraliftx.in/" />
+  <meta property="og:image" content="https://neuraliftx.in/og-image.png" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="NeuraliftX - Learn without Boundaries" />
+  <meta name="twitter:description"
+    content="AI-powered educational platform ensuring human intelligence scales alongside artificial intelligence." />
+  <meta name="twitter:image" content="https://neuraliftx.in/og-image.png" />
+
+  <title>NeuraliftX: Learn without Boundaries.</title>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {}
+      }
+    }
+  </script>
+
+  <!-- Google Fonts: Caprasimo (Headings) & Figtree / Inter (Body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Caprasimo&family=Figtree:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap"
+    rel="stylesheet" />
+
+  <!-- Google Translate Initialization -->
+  <script>
+    (function () {
+      var savedLang = localStorage.getItem('userLanguage') || 'en';
+      function clearCookies() {
+        var h = window.location.hostname;
+        var parts = h.split('.');
+        var rootD = parts.length >= 2 ? parts.slice(-2).join('.') : h;
+        var domains = ['', '.' + h, h, '.' + rootD, rootD];
+        domains.forEach(function (d) {
+          var dStr = d ? '; domain=' + d : '';
+          document.cookie = 'googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/' + dStr;
+        });
+      }
+
+      if (savedLang === 'en') {
+        clearCookies();
+      }
+
+      window.googleTranslateElementInit = function () {
+        new google.translate.TranslateElement({
+          pageLanguage: 'en',
+          autoDisplay: false
+        }, 'google_translate_element');
+      };
+
+      window.loadGoogleTranslateScript = function (callback) {
+        if (window.google && window.google.translate) {
+          if (callback) callback();
+          return;
+        }
+        var existing = document.getElementById('google-translate-script');
+        if (existing) {
+          existing.addEventListener('load', function () { if (callback) callback(); });
+          return;
+        }
+        var s = document.createElement('script');
+        s.id = 'google-translate-script';
+        s.src = '//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
+        s.async = true;
+        s.onload = function () { if (callback) callback(); };
+        document.body.appendChild(s);
+      };
+    })();
+  </script>
+</head>
+
+<body>
+  <div id="google_translate_element" style="display:none"></div>
+  <div id="root"></div>
+  <script type="module" src="/src/main.jsx"></script>
+</body>
+
+</html>
