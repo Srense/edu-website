@@ -295,7 +295,7 @@ const ContactPage = () => {
               <ContactCard
                 icon={Mail}
                 title="Email Us"
-                info="sarkarrick3456@gmail.com"
+                info="accounts@neuraliftx.in"
                 subInfo="We reply within 24 hours"
                 iconClass="organic-icon-accent"
               />

@@ -6,6 +6,8 @@ import AboutUsPage from "./AboutUsPage";
 import TechnologyPage from "./TechnologyPage";
 import MediaPage from "./MediaPage";
 import ContactPage from "./ContactPage";
+import PrivacyPolicyPage from "./PrivacyPolicyPage";
+import GlobalGhostBot from "./components/GlobalGhostBot";
 
 // Helper component that scrolls window to top on route change
 const ScrollToTop = () => {
@@ -29,9 +31,11 @@ function App() {
           <Route path="/technology" element={<TechnologyPage />} />
           <Route path="/media" element={<MediaPage />} />
           <Route path="/contact" element={<ContactPage />} />
+          <Route path="/privacy" element={<PrivacyPolicyPage />} />
           {/* Fallback route */}
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
+        <GlobalGhostBot />
       </BrowserRouter>
     </HelmetProvider>
   );
