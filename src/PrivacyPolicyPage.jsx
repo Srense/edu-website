@@ -99,7 +99,7 @@ const PrivacyPolicyPage = () => {
                 <Mail size={16} className="text-[#c87037] shrink-0 mt-0.5" />
                 <div>
                   <strong className="block text-stone-900 font-bold mb-0.5">Grievance Officer:</strong>
-                  Annkit Sarkar · <a href="mailto:contact@neuraliftx.in" className="text-[#c87037] underline font-semibold">contact@neuraliftx.in</a>
+                  Annkit Sarkar · <a href="mailto:accounts@neuraliftx.in" className="text-[#c87037] underline font-semibold">accounts@neuraliftx.in</a>
                   <br />
                   Phone: <a href="tel:+918697319384" className="text-stone-700 hover:text-stone-900">+91 8697319384</a>
                 </div>
@@ -378,7 +378,7 @@ const PrivacyPolicyPage = () => {
               </div>
             </div>
             <p className="mt-4 text-xs text-stone-600">
-              To exercise any of these rights, navigate to <strong>Settings &gt; Privacy</strong> in the app or write to us at <a href="mailto:contact@neuraliftx.in" className="text-[#c87037] font-bold underline">contact@neuraliftx.in</a>. We respond within 30 days.
+              To exercise any of these rights, navigate to <strong>Settings &gt; Privacy</strong> in the app or write to us at <a href="mailto:accounts@neuraliftx.in" className="text-[#c87037] font-bold underline">accounts@neuraliftx.in</a>. We respond within 30 days.
             </p>
           </section>
 
@@ -397,8 +397,8 @@ const PrivacyPolicyPage = () => {
                 <div className="font-bold text-stone-900 text-sm">Annkit Sarkar</div>
                 <div className="text-stone-600">Grievance Officer, Alfrin Technologies Private Limited</div>
                 <div className="flex flex-wrap gap-4 pt-1">
-                  <a href="mailto:contact@neuraliftx.in" className="inline-flex items-center gap-1.5 text-[#c87037] font-bold hover:underline">
-                    <Mail size={14} /> contact@neuraliftx.in
+                  <a href="mailto:accounts@neuraliftx.in" className="inline-flex items-center gap-1.5 text-[#c87037] font-bold hover:underline">
+                    <Mail size={14} /> accounts@neuraliftx.in
                   </a>
                   <a href="tel:+918697319384" className="inline-flex items-center gap-1.5 text-stone-800 font-semibold hover:underline">
                     <Phone size={14} /> +91 8697319384
