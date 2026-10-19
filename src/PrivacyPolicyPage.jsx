@@ -35,11 +35,6 @@ const PrivacyPolicyPage = () => {
           <h1 className="text-3xl md:text-5xl font-black tracking-tight text-stone-900 mb-4">
             NeuraliftX Privacy Policy
           </h1>
-          <div className="flex flex-wrap items-center gap-4 text-xs font-semibold text-stone-500">
-            <span>Effective Date: October 11, 2026</span>
-            <span>•</span>
-            <span>Data Fiduciary: Alfrin Technologies Private Limited</span>
-          </div>
           <p className="mt-4 text-stone-600 leading-relaxed text-sm md:text-base max-w-3xl">
             This policy explains what personal data NeuraliftX collects, why, and the choices students and parents have, in strict alignment with India's Digital Personal Data Protection Act, 2023 (DPDP Act) and the DPDP Rules, 2025.
           </p>
