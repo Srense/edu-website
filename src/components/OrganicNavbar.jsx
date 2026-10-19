@@ -38,9 +38,11 @@ const OrganicNavbar = () => {
             className="flex items-center gap-2 cursor-pointer"
             onClick={() => navigate("/")}
           >
-            <div className="p-2 rounded-xl" style={{ background: 'var(--color-accent)', color: 'var(--color-bg)' }}>
-              <GraduationCap size={22} />
-            </div>
+            <img
+              src="/logo.png"
+              alt="NeuraliftX Logo"
+              className="w-9 h-9 rounded-xl object-contain shadow-sm"
+            />
             <span className="text-xl md:text-2xl tracking-tight organic-heading">
               NeuraliftX
             </span>
